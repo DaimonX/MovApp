@@ -1,0 +1,58 @@
+﻿@model MovApp.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Подробно о фильме: @Html.DisplayFor(model => model.Title) </h2>
+
+<fieldset>
+    <legend>Movie</legend>
+
+    <div class="display-label">
+        Название:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         Год
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Year)
+    </div>
+
+    <div class="display-label">
+         Длительность
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Length)
+    </div>
+
+    <div class="display-label">
+        Описание
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Rate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rate)
+    </div>
+
+    <div class="display-label">
+         Жанр
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Genre.Name)
+    </div>
+</fieldset>
+<p>
+    @*Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |*@
+    <!--Bla bla-->
+    @Html.ActionLink("Назад к списку", "Index")
+</p>

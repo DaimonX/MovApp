@@ -1,0 +1,83 @@
+﻿@model MovApp.Models.MovieListModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Список фильмов</h2>
+
+<p>
+    @Html.ActionLink("Добавить фильм", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    <p>
+        Название фильма: Html.TextBoxFor(x => x.MovieList.) <br />
+        <input type="submit" value="Фильтр" />
+    </p>
+}
+<table class="simple-little-table">
+    <tr>
+        <th>
+            @Html.ActionLink("Название", "Index", new { SortedColumn = "Title" })
+        </th>
+        <th>
+            @Html.ActionLink("Год", "Index", new { SortedColumn = "Year" })
+        </th>
+        <th>
+            Время
+        </th>
+        <th>
+            Описание
+        </th>
+        <th>
+            Рейтинг
+        </th>
+        <th>
+            Жанр
+        </th>
+        <th>
+            Допустимые действия
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.MovieList )
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Length)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre.Name)
+            </td>
+            <td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <text>
+                    @Html.ActionLink("Изменить", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Подробно", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.Id })                    
+                    </text>
+                    } else {
+                    <text>
+                        @Html.ActionLink("Подробно", "Details", new { id = item.Id })
+                    </text>
+                    }
+</td>
+        </tr>
+    }
+
+</table>

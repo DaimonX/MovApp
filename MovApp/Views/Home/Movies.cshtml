@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MovApp.Models.Movie>
+
+@{
+    ViewBag.Title = "Movies";
+}
+
+@helper sortLink(string name, int id)
+{
+    <a href="@Url.Action("Movies", "Home", new { sortby = id, isasc = (id == ViewBag.sortBy ? !@ViewBag.isAsc : @ViewBag.isAsc).ToString().ToLower() })">@name</a>
+}
+
+<h2 class="center">Movies</h2>
+@* header *@
+<div class="movies-search">
+
+    <form action="@Url.Action("Movies", "Home")" method="get">
+        Search <input id="search" name="search" type="text" value="@ViewBag.Search" />
+        <input type="submit" value="Search" />
+    </form>
+
+</div>
+
+<table>
+    <tr>
+        <th>@sortLink("Название", 1)</th>
+        <th>@sortLink("Год", 2)</th>
+        <th>@Html.LabelFor(m => m.First().Length)</th>
+        <th>@Html.LabelFor(m => m.First().Description)</th>
+        <th>@Html.LabelFor(m => m.First().Rate)</th>
+        <th>@Html.LabelFor(m => m.First().Genre)</th>
+    </tr>
+    @{int i =1;}
+    @foreach (var mov in Model)
+    {
+        <tr class="@(i++ %2 == 0 ? "highlighted" : "")">
+            <td>@mov.Title</td>
+            <td>@mov.Year</td>
+            <td>@mov.Length</td>
+            <td>@mov.Description</td>
+            <td>@mov.Rate</td>
+            <td>@mov.Genre.Name</td>
+         </tr>
+    }
+</table>
+
+<div class="pagination">
+Страница:
+@for (int p = 1; p <= ViewBag.TotalPages; p++)
+{
+    <a class="@(p == ViewBag.CurrentPage ? "current" : "")"
+       href="@Url.Action("Movies", "Home", new { page = p, sortBy = ViewBag.sortBy, isAsc = ViewBag.isAsc, search = ViewBag.Search })">@p</a>
+}
+</div>
+
+

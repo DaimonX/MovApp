@@ -1,0 +1,209 @@
+﻿body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #FFFFFF
+}
+
+body {
+    background-color: #FFFFFF;
+    font-size: .85em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #696969;
+}
+
+a:link {
+    color: #034af3;
+    text-decoration: underline;
+}
+
+
+
+header, footer, nav, section {
+    display: block;
+}
+
+.css-class-name{
+    background-image: url('bkg.jpg');
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+/*fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+    background-color: #ffec5a
+}*/
+
+fieldset {
+    border-radius: 10px;
+    background: #eee;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    position: relative;
+    border: 2px groove threedface;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    font-size: small;
+    color: #f00;
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*my Styles*/
+.display-label {
+    font-size: small;
+    color: #f00;
+}
+
+.display-field{
+    font-size:medium;
+}
+
+a:active {
+    color: #12eb87;
+}
+
+/* Movies   
+----------------------------------------------------------*/
+.movies
+{
+    margin: 0 auto;  
+  	
+}
+
+ 
+
+.movies td, .movies th
+{
+    padding: 5px 15px;
+    border: none;
+    border-bottom: solid 1px #D4D4D4;
+   
+}
+
+.movies th a
+{
+    text-decoration: none;
+	
+}
+.highlighted
+{
+    background-color: #FFFF66;
+}
+
+.center 
+{
+	 text-align: center;
+}
+
+/* Pagination ----------------------------*/
+.pagination {
+	text-align: center;
+	margin: 15px auto;
+}
+.pagination .current
+{
+    background-color: #FFFF66;
+    border-radius: 5px;
+    color: black;
+    padding: 4px 8px;
+}
+
+
+.pagination a
+ {
+    background-color: #FFFFFF;
+    border: 2px solid #86B5EE;
+    border-radius: 5px;
+    padding: 3px 7px 4px;    
+    color: #61ACEA;
+    text-decoration: none;
+}
+
+.pagination a:hover 
+{
+	background-color:#FFFF66;
+}
+
+.page-size
+{
+	display: inline-block;
+    margin-left: 50px;
+    
+}
+
+.page-size select {
+	border: 1px solid #86B5EE;
+	padding: 2px 2px 2px 5px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table {
+    border: solid 1px #e8eef4;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 5px;
+    border: solid 1px #e8eef4;
+}
+
+table th {
+    padding: 6px 5px;
+    text-align: left;
+    background-color: #e8eef4;
+    border: solid 1px #e8eef4;
+}
+
+.movies-search 
+{
+	text-align: center;
+	margin: 15px 0;
+}
